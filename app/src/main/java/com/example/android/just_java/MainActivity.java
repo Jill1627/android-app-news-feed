@@ -29,18 +29,12 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-
-//        int numberOfCoffee = 2;
-        numberOfCoffee++;
-        display(numberOfCoffee);
-        displayPrice(numberOfCoffee * 5);
+        displayOrder();
     }
     /**
      * This method is called when the order button is clicked.
      */
     public void addQuantity(View view) {
-
-//        int numberOfCoffee = 2;
         numberOfCoffee++;
         display(numberOfCoffee);
         displayPrice(numberOfCoffee * 5);
@@ -49,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void minusQuantity(View view) {
-
-//        int numberOfCoffee = 2;
         if (numberOfCoffee > 0) {
             numberOfCoffee--;
         }
@@ -70,5 +62,12 @@ public class MainActivity extends AppCompatActivity {
     private void displayPrice(int number) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+    }
+    /**
+     * This method displays the given price on the screen.
+     */
+    private void displayOrder() {
+        TextView orderTextView = (TextView) findViewById(R.id.order_text_view);
+        orderTextView.setText("Your coffee is brewing...");
     }
 }
