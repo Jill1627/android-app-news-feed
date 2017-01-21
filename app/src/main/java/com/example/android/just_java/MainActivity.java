@@ -29,18 +29,12 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-
-//        int numberOfCoffee = 2;
-        numberOfCoffee++;
-        display(numberOfCoffee);
-        displayPrice(numberOfCoffee * 5);
+        displayOrder(true);
     }
     /**
      * This method is called when the order button is clicked.
      */
     public void addQuantity(View view) {
-
-//        int numberOfCoffee = 2;
         numberOfCoffee++;
         display(numberOfCoffee);
         displayPrice(numberOfCoffee * 5);
@@ -49,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void minusQuantity(View view) {
-
-//        int numberOfCoffee = 2;
         if (numberOfCoffee > 0) {
             numberOfCoffee--;
         }
@@ -70,5 +62,25 @@ public class MainActivity extends AppCompatActivity {
     private void displayPrice(int number) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+    }
+    /**
+     * This method displays a string when order is submitted.
+     */
+    private void displayOrder(boolean action) {
+        TextView orderTextView = (TextView) findViewById(R.id.order_text_view);
+        if (action == true) {
+            orderTextView.setText("Your coffee is brewing...");
+        } else {
+            orderTextView.setText("");
+        }
+    }
+    /**
+     * This method displays a string when order is submitted.
+     */
+    public void resetOrder(View view) {
+        numberOfCoffee = 0;
+        displayPrice(numberOfCoffee);
+        display(numberOfCoffee);
+        displayOrder(false);
     }
 }
