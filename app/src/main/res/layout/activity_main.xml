@@ -47,5 +47,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Order"
-        android:onClick="submitOrder"/>
+        android:onClick="submitOrder"
+        android:id="@+id/button" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="+"
+        android:onClick="addQuantity"
+        android:id="@+id/plusButton" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="-"
+        android:onClick="minusQuantity"
+        android:id="@+id/minusButton" />
 </LinearLayout>
