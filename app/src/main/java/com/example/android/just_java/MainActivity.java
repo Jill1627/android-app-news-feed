@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        displayOrder();
+        displayOrder(true);
     }
     /**
      * This method is called when the order button is clicked.
@@ -64,10 +64,23 @@ public class MainActivity extends AppCompatActivity {
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
     /**
-     * This method displays the given price on the screen.
+     * This method displays a string when order is submitted.
      */
-    private void displayOrder() {
+    private void displayOrder(boolean action) {
         TextView orderTextView = (TextView) findViewById(R.id.order_text_view);
-        orderTextView.setText("Your coffee is brewing...");
+        if (action == true) {
+            orderTextView.setText("Your coffee is brewing...");
+        } else {
+            orderTextView.setText("");
+        }
+    }
+    /**
+     * This method displays a string when order is submitted.
+     */
+    public void resetOrder(View view) {
+        numberOfCoffee = 0;
+        displayPrice(numberOfCoffee);
+        display(numberOfCoffee);
+        displayOrder(false);
     }
 }

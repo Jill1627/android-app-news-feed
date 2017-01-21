@@ -67,6 +67,13 @@
         android:text="Order"
         android:onClick="submitOrder"
         android:id="@+id/button" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Reset"
+        android:onClick="resetOrder"
+        android:id="@+id/resetButton" />
     <TextView
         android:id="@+id/order_text_view"
         android:layout_width="wrap_content"
