@@ -51,7 +51,9 @@ public class MainActivity extends AppCompatActivity {
     public void minusQuantity(View view) {
 
 //        int numberOfCoffee = 2;
-        numberOfCoffee--;
+        if (numberOfCoffee > 0) {
+            numberOfCoffee--;
+        }
         display(numberOfCoffee);
         displayPrice(numberOfCoffee * 5);
     }
